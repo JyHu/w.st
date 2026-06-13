@@ -6,13 +6,15 @@
   <title>Stellect - 目标追踪应用</title>
   <meta name="description" content="Stellect 帮助你记录和追踪生活中的每一个目标。创建清单、记录完成、分享足迹，让热爱不再只是想想而已。">
   <link rel="stylesheet" href="assets/css/main.css">
+  <script src="config/config.js"></script>
+  <script src="assets/js/app-config-loader.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-wrap">
         <a href="index.html" class="brand">
-          <span>✨ Stellect</span>
+          <span data-app-brand>✨ Stellect</span>
         </a>
         <nav class="nav">
           <a href="index.html" class="nav-link active">首页</a>
@@ -84,24 +86,24 @@
         <h2 class="section-title">应用截图</h2>
         <p class="section-subtitle">简洁直观的界面设计</p>
       </div>
-      <div class="screenshot-grid">
-        <div class="screenshot-item">
-          <img src="assets/images/home.png" alt="首页" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 280px; aspect-ratio: 1170 / 2532;">
-          <h3>首页</h3>
+      <div class="screenshot-carousel" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+        <button class="carousel-btn prev-btn" id="prevBtn" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 50%; width: 44px; height: 44px; font-size: 24px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; color: #667eea;">‹</button>
+        
+        <div id="screenshotContainer" style="text-align: center;">
+          <img id="screenshotImg" src="assets/images/home.png" alt="应用截图" style="width: 280px; aspect-ratio: 1170 / 2532; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+          <h3 id="screenshotName" style="margin-top: 16px; margin-bottom: 8px;">首页</h3>
+          <p id="screenshotDes" style="color: #666; font-size: 14px; margin: 0;">应用首页，展示主要功能和最新动态</p>
         </div>
-        <div class="screenshot-item">
-          <img src="assets/images/list.png" alt="清单详情" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); width: 280px; aspect-ratio: 1170 / 2532;">
-          <h3>清单详情</h3>
-        </div>
-        <div class="screenshot-item">
-          <img src="assets/images/record.png" alt="完成记录" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 280px; aspect-ratio: 1170 / 2532;">
-          <h3>完成记录</h3>
-        </div>
-        <div class="screenshot-item">
-          <img src="assets/images/achievement.png" alt="成就展示" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); width: 280px; aspect-ratio: 1170 / 2532;">
-          <h3>成就展示</h3>
-        </div>
+        
+        <button class="carousel-btn next-btn" id="nextBtn" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 50%; width: 44px; height: 44px; font-size: 24px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; color: #667eea;">›</button>
       </div>
+      
+      <style>
+        .carousel-btn:hover {
+          background: rgba(102, 126, 234, 0.2) !important;
+          border-color: rgba(102, 126, 234, 0.5) !important;
+        }
+      </style>
     </div>
   </section>
 
@@ -209,6 +211,7 @@
   </footer>
 
   <script src="config/social.js"></script>
+  <script src="assets/js/screenshot-carousel.js"></script>
   <script src="assets/js/config-loader.js"></script>
 </body>
 </html>
