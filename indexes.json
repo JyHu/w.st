@@ -1,5 +1,5 @@
 {
-    "updateAt": 1780816435,
+    "updateAt": 1783093202,
     "categories": [
         {
             "id": "book",
@@ -89,5 +89,6 @@
             "count": 4,
             "updateAt": 1780156800
         }
-    ]
+    ],
+    "version": 7
 }

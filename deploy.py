@@ -11,12 +11,16 @@ import shutil
 import subprocess
 import sys
 import time
+import zipfile
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent
 LISTS_DIR = ROOT_DIR / "lists"
 TMPS_DIR = ROOT_DIR / "tmps"
 ROOT_INDEX = ROOT_DIR / "indexes.json"
+RELEASE_DIR = ROOT_DIR / "release"
+RELEASE_ZIP = RELEASE_DIR / "stellect_release.zip"
+RELEASE_META = RELEASE_DIR / "release.json"
 
 REQUIRED_FIELDS = {"id", "name", "desc", "icon", "category", "date", "items"}
 REQUIRED_ITEM_FIELDS = {"name"}
@@ -254,7 +258,7 @@ def generate_category_index(category_dir):
 
 
 
-def generate_root_index():
+def generate_root_index(version=None):
     """Generate the root indexes.json purely from lists/*/_indexes.json."""
     categories = []
     warnings = []
@@ -305,10 +309,56 @@ def generate_root_index():
         "updateAt": int(time.time()),
         "categories": categories,
     }
+    if version is not None:
+        root_data["version"] = version
     with open(ROOT_INDEX, "w", encoding="utf-8") as f:
         json.dump(root_data, f, ensure_ascii=False, indent=4)
 
     return warnings
+
+
+def _read_release_version():
+    """Read current release version from release/release.json."""
+    if not RELEASE_META.exists():
+        return 0
+
+    try:
+        with open(RELEASE_META, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        version = data.get("version", 0)
+        if isinstance(version, int) and version >= 0:
+            return version
+    except (json.JSONDecodeError, OSError):
+        pass
+
+    return 0
+
+
+def generate_release_assets(version=None):
+    """Create release zip and update release metadata."""
+    RELEASE_DIR.mkdir(parents=True, exist_ok=True)
+
+    with zipfile.ZipFile(RELEASE_ZIP, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        if ROOT_INDEX.exists():
+            zf.write(ROOT_INDEX, arcname="indexes.json")
+
+        if LISTS_DIR.exists():
+            for filepath in sorted(LISTS_DIR.rglob("*")):
+                if filepath.is_file():
+                    if any(part.startswith(".") for part in filepath.relative_to(LISTS_DIR).parts):
+                        continue
+                    arcname = str(filepath.relative_to(LISTS_DIR))
+                    zf.write(filepath, arcname=arcname)
+
+    new_version = version if version is not None else (_read_release_version() + 1)
+    release_data = {
+        "version": new_version,
+        "releaseDate": int(time.time()),
+    }
+    with open(RELEASE_META, "w", encoding="utf-8") as f:
+        json.dump(release_data, f, ensure_ascii=False, indent=4)
+
+    return new_version
 
 
 def main():
@@ -369,8 +419,14 @@ def main():
             print(f"  Generated: lists/{category_dir.name}/{CATEGORY_INDEX_NAME} ({count} items)")
 
     # Generate root index
-    warnings = generate_root_index()
+    release_version = _read_release_version() + 1
+    warnings = generate_root_index(version=release_version)
     print(f"  Generated: indexes.json")
+
+    # Generate release package and metadata
+    release_version = generate_release_assets(version=release_version)
+    print(f"  Generated: release/stellect_release.zip")
+    print(f"  Updated: release/release.json (version={release_version})")
 
     # Print warnings
     if warnings:
