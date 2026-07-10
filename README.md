@@ -202,7 +202,7 @@ ls -la release/
 
 ## 🔗 相关链接
 
-- **官网**：https://w.st/
+- **官网**：https://yunxi.cyou/w.st/
 - **App Store**：https://apps.apple.com/app/id6779149152
 - **GitHub**：https://github.com/JyHu/Stellect
 
