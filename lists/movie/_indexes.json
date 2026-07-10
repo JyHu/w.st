@@ -3,9 +3,17 @@
     "name": "电影",
     "icon": "film.fill",
     "desc": "影史经典不可错过",
-    "count": 2,
-    "updateAt": 1780156800,
+    "count": 3,
+    "updateAt": 1783612800,
     "items": [
+        {
+            "id": "C3D4E5F6-G7H8-9012-CDEF-34567890ABCD",
+            "name": "奥斯卡最佳影片",
+            "desc": "电影艺术的巅峰之作，永恒的经典传奇",
+            "icon": "film.fill",
+            "date": 1783612800,
+            "count": 71
+        },
         {
             "id": "27371A23-ABC3-409D-AE3C-512ED81A476E",
             "name": "一生必看的100部电影",

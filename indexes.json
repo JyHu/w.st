@@ -1,6 +1,46 @@
 {
-    "updateAt": 1783093202,
+    "updateAt": 1783699112,
     "categories": [
+        {
+            "id": "food",
+            "name": "美食",
+            "icon": "fork.knife",
+            "desc": "用味蕾探索世界",
+            "count": 4,
+            "updateAt": 1783612800
+        },
+        {
+            "id": "life",
+            "name": "人生",
+            "icon": "heart.fill",
+            "desc": "人生清单，不留遗憾",
+            "count": 3,
+            "updateAt": 1783612800
+        },
+        {
+            "id": "movie",
+            "name": "电影",
+            "icon": "film.fill",
+            "desc": "影史经典不可错过",
+            "count": 3,
+            "updateAt": 1783612800
+        },
+        {
+            "id": "music",
+            "name": "音乐",
+            "icon": "music.note",
+            "desc": "用音乐感受世界",
+            "count": 3,
+            "updateAt": 1783612800
+        },
+        {
+            "id": "travel",
+            "name": "旅行",
+            "icon": "airplane",
+            "desc": "世界那么大，我想去看看",
+            "count": 5,
+            "updateAt": 1783612800
+        },
         {
             "id": "book",
             "name": "阅读",
@@ -26,43 +66,11 @@
             "updateAt": 1780156800
         },
         {
-            "id": "food",
-            "name": "美食",
-            "icon": "fork.knife",
-            "desc": "用味蕾探索世界",
-            "count": 3,
-            "updateAt": 1780156800
-        },
-        {
             "id": "hiking",
             "name": "徒步",
             "icon": "figure.hiking",
             "desc": "徒步旅行的最佳目的地",
             "count": 3,
-            "updateAt": 1780156800
-        },
-        {
-            "id": "life",
-            "name": "人生",
-            "icon": "heart.fill",
-            "desc": "人生清单，不留遗憾",
-            "count": 2,
-            "updateAt": 1780156800
-        },
-        {
-            "id": "movie",
-            "name": "电影",
-            "icon": "film.fill",
-            "desc": "影史经典不可错过",
-            "count": 2,
-            "updateAt": 1780156800
-        },
-        {
-            "id": "music",
-            "name": "音乐",
-            "icon": "music.note",
-            "desc": "用音乐感受世界",
-            "count": 2,
             "updateAt": 1780156800
         },
         {
@@ -80,15 +88,7 @@
             "desc": "挑战身体的极限",
             "count": 1,
             "updateAt": 1780156800
-        },
-        {
-            "id": "travel",
-            "name": "旅行",
-            "icon": "airplane",
-            "desc": "世界那么大，我想去看看",
-            "count": 4,
-            "updateAt": 1780156800
         }
     ],
-    "version": 7
+    "version": 8
 }

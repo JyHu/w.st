@@ -3,9 +3,17 @@
     "name": "美食",
     "icon": "fork.knife",
     "desc": "用味蕾探索世界",
-    "count": 3,
-    "updateAt": 1780156800,
+    "count": 4,
+    "updateAt": 1783612800,
     "items": [
+        {
+            "id": "B2C3D4E5-F6G7-8901-BCDE-F23456789ABC",
+            "name": "中国八大菜系代表菜",
+            "desc": "舌尖上的中国，八大菜系的经典传承",
+            "icon": "fork.knife",
+            "date": 1783612800,
+            "count": 52
+        },
         {
             "id": "252727B0-E327-47A2-A8FD-F1C514CB28C9",
             "name": "中国最好吃的50碗面",

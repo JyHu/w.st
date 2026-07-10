@@ -3,9 +3,17 @@
     "name": "旅行",
     "icon": "airplane",
     "desc": "世界那么大，我想去看看",
-    "count": 4,
-    "updateAt": 1780156800,
+    "count": 5,
+    "updateAt": 1783612800,
     "items": [
+        {
+            "id": "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+            "name": "世界最美的50个海滩",
+            "desc": "碧海蓝天，椰林树影，人间天堂的终极向往",
+            "icon": "water.waves",
+            "date": 1783612800,
+            "count": 67
+        },
         {
             "id": "D5383011-D977-4263-8BBE-82C4B25B6A13",
             "name": "一生必去的50个国家",

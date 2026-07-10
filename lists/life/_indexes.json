@@ -3,9 +3,17 @@
     "name": "人生",
     "icon": "heart.fill",
     "desc": "人生清单，不留遗憾",
-    "count": 2,
-    "updateAt": 1780156800,
+    "count": 3,
+    "updateAt": 1783612800,
     "items": [
+        {
+            "id": "E5F6G7H8-I9J0-1234-EFGH-567890ABCDE",
+            "name": "人生必做50件事",
+            "desc": "生命的意义在于体验，让人生不留遗憾的终极清单",
+            "icon": "heart.fill",
+            "date": 1783612800,
+            "count": 61
+        },
         {
             "id": "81596A0C-3777-47C2-AC21-A90BB4BB95FC",
             "name": "一辈子要完成的100件事",
