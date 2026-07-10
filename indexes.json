@@ -1,27 +1,43 @@
 {
-    "updateAt": 1783699112,
+    "updateAt": 1783704738,
     "categories": [
+        {
+            "id": "book",
+            "name": "阅读",
+            "icon": "book.fill",
+            "desc": "书中自有黄金屋",
+            "count": 5,
+            "updateAt": 1786339200
+        },
         {
             "id": "food",
             "name": "美食",
             "icon": "fork.knife",
             "desc": "用味蕾探索世界",
-            "count": 4,
-            "updateAt": 1783612800
+            "count": 6,
+            "updateAt": 1786339200
         },
         {
-            "id": "life",
-            "name": "人生",
-            "icon": "heart.fill",
-            "desc": "人生清单，不留遗憾",
-            "count": 3,
-            "updateAt": 1783612800
+            "id": "hiking",
+            "name": "徒步",
+            "icon": "figure.hiking",
+            "desc": "徒步旅行的最佳目的地",
+            "count": 6,
+            "updateAt": 1786339200
         },
         {
             "id": "movie",
             "name": "电影",
             "icon": "film.fill",
             "desc": "影史经典不可错过",
+            "count": 5,
+            "updateAt": 1786339200
+        },
+        {
+            "id": "life",
+            "name": "人生",
+            "icon": "heart.fill",
+            "desc": "人生清单，不留遗憾",
             "count": 3,
             "updateAt": 1783612800
         },
@@ -42,14 +58,6 @@
             "updateAt": 1783612800
         },
         {
-            "id": "book",
-            "name": "阅读",
-            "icon": "book.fill",
-            "desc": "书中自有黄金屋",
-            "count": 2,
-            "updateAt": 1780156800
-        },
-        {
             "id": "city",
             "name": "城市",
             "icon": "building.2.fill",
@@ -63,14 +71,6 @@
             "icon": "building.columns.fill",
             "desc": "探索人类文明的瑰宝",
             "count": 2,
-            "updateAt": 1780156800
-        },
-        {
-            "id": "hiking",
-            "name": "徒步",
-            "icon": "figure.hiking",
-            "desc": "徒步旅行的最佳目的地",
-            "count": 3,
             "updateAt": 1780156800
         },
         {
@@ -90,5 +90,5 @@
             "updateAt": 1780156800
         }
     ],
-    "version": 8
+    "version": 10
 }

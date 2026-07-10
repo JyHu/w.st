@@ -77,6 +77,21 @@ def validate_json_file(filepath):
     if filepath.name.startswith("_"):
         return None, [f"File name must not start with '_' (reserved for index files)"]
 
+    # Check if file name matches list id (this should be the first check)
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        # Extract expected filename from id field
+        if "id" in data:
+            expected_filename = f"{data['id']}.json"
+            if filepath.name != expected_filename:
+                errors.append(f"File name mismatch: expected '{expected_filename}', got '{filepath.name}'")
+                # Note: We'll handle the actual renaming in update_list_file to avoid conflicts
+    except (json.JSONDecodeError, OSError):
+        # If we can't read the file, let the other validation checks handle it
+        pass
+
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -174,13 +189,29 @@ def _gen_uuid():
 
 
 def update_list_file(filepath):
-    """Update count, ensure id (UUID), and convert date in a list JSON file."""
+    """Update count, ensure id (UUID), convert date, and rename file to match id in a list JSON file."""
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
-    data["count"] = len(data.get("items", []))
+    
     # Ensure id (UUID) exists
     if "id" not in data:
         data["id"] = _gen_uuid()
+    
+    # Rename file to match id if needed (this should always be done)
+    expected_name = f"{data['id']}.json"
+    if filepath.name != expected_name:
+        new_path = filepath.parent / expected_name
+        # Avoid overwriting existing files
+        if new_path.exists() and new_path != filepath:
+            # Generate a new UUID to avoid conflicts
+            data["id"] = _gen_uuid()
+            expected_name = f"{data['id']}.json"
+            new_path = filepath.parent / expected_name
+        
+        filepath.rename(new_path)
+        filepath = new_path
+    
+    data["count"] = len(data.get("items", []))
     # Convert date to second-level timestamp
     date_val = data.get("date", "")
     if isinstance(date_val, str) and date_val:
@@ -188,12 +219,7 @@ def update_list_file(filepath):
     elif isinstance(date_val, (int, float)) and date_val > 9999999999:
         # Was millisecond timestamp, convert to seconds
         data["date"] = int(date_val // 1000)
-    # Rename file to match id if needed
-    expected_name = f"{data['id']}.json"
-    if filepath.name != expected_name:
-        new_path = filepath.parent / expected_name
-        filepath.rename(new_path)
-        filepath = new_path
+    
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     return filepath

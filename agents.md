@@ -113,7 +113,7 @@ StellectList/
 
 | 字段 | 类型 | 说明 |
 |------|------|------|
-| id | string | 清单唯一标识，使用随机UUID格式（如：550E8400-E29B-41D4-A716-446655440000） |
+| id | string | 清单唯一标识，使用随机UUID格式（如：550E8400-E29B-41D4-A716-446655440000），比如可以用 uuidgen |
 | name | string | 清单名称 |
 | desc | string | 清单简短描述（可为空字符串） |
 | icon | string | SF Symbol 名称或 emoji 表情符号 |
