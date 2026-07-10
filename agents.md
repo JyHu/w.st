@@ -45,7 +45,10 @@
 ```
 StellectList/
 ├── indexes.json              # 根索引（自动生成，勿手动编辑）
-├── deploy.py                 # 校验 & 部署脚本
+├── scripts/                  # 脚本目录
+│   ├── deploy.py            # 校验 & 部署脚本
+│   ├── fix_dump.py          # 重复项处理脚本
+│   └── lint.py              # 格式化 & 校验脚本
 ├── lists/                    # 正式清单目录
 │   ├── city/
 │   │   ├── _indexes.json     # 分类索引（自动生成，_ 前缀）
@@ -84,7 +87,7 @@ StellectList/
 
 1. **生成清单** → 放到 `tmps/` 目录下
 2. **如果是新分类** → 在 `lists/` 下新建对应目录，并创建 `_indexes.json` 填写分类信息（name、icon、desc）
-3. **运行部署** → 执行 `python3 deploy.py`，脚本会自动校验、归档、生成索引
+3. **运行部署** → 执行 `python3 scripts/deploy.py`，脚本会自动校验、归档、生成索引
 
 > 根目录下的 `indexes.json` 完全由脚本从 `lists/*/_indexes.json` 自动生成，**不要手动编辑**。
 
@@ -209,6 +212,53 @@ StellectList/
   - 地点类条目必须提供真实、公开、可信的地理位置信息
 - 生成清单时 date 填当天日期（YYYY-MM-DD 格式即可，脚本会自动转换）
 - 所有时间戳均为秒级（10位数字）
+- **格式化标准**：所有脚本统一使用 2空格缩进、字段按字母顺序排序、items数组按name排序
+
+## 脚本使用指南
+
+### deploy.py - 部署脚本
+```bash
+# 基本部署 - 校验、归档、生成索引
+python3 scripts/deploy.py
+
+# 功能说明：
+# - 自动校验 JSON 格式和字段完整性
+# - 将校验通过的文件移动到 lists/<category>/
+# - 将校验失败的文件移动到 tmps/
+# - 自动生成分类索引和根索引
+# - 生成发布版本包
+# - 统一格式化：2空格缩进、字段排序、items排序
+```
+
+### lint.py - 格式化 & 校验脚本
+```bash
+# 默认模式：格式化 + 校验
+python3 scripts/lint.py
+
+# 只格式化，不校验
+python3 scripts/lint.py --format-only
+
+# 只校验，不格式化
+python3 scripts/lint.py --check-only
+
+# 功能说明：
+# - 格式化：2空格缩进、字段按字母顺序排序、items数组按name排序
+# - 校验：JSON格式、字段完整性、数据质量
+```
+
+### fix_dump.py - 重复项处理脚本
+```bash
+# 处理所有清单文件的重复项（优先保留lists目录下的）
+python3 scripts/fix_dump.py -all
+
+# 处理单个清单文件的重复项
+python3 scripts/fix_dump.py lists/movie/xxx.json
+
+# 功能说明：
+# - 识别并处理跨文件重复项
+# - -all参数：优先保留lists目录下的重复项，删除tmps目录下的
+# - 单文件模式：处理指定文件内的重复项
+```
 
 ## 数据生成规则
 
@@ -316,4 +366,4 @@ python3 deploy.py
 
 ---
 
-**最后更新**：2026 年 7 月 10 日
+**最后更新**：2026 年 7 月 11 日
