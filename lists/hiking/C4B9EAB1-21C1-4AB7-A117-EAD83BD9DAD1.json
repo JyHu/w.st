@@ -1,6 +1,6 @@
 {
   "category": "hiking",
-  "count": 50,
+  "count": 48,
   "date": 1780156800,
   "desc": "用双脚丈量最美风景",
   "icon": "figure.hiking",
@@ -217,13 +217,6 @@
       "name": "武功山徒步"
     },
     {
-      "address": "中国，四川省凉山/甘孜州",
-      "desc": "从木里到亚丁的香格里拉秘境穿越",
-      "latitude": 28.35,
-      "longitude": 100.3,
-      "name": "洛克线"
-    },
-    {
       "address": "日本，和歌山县/三重县",
       "desc": "日本纪伊半岛的世界遗产朝圣路",
       "latitude": 33.84,
@@ -236,13 +229,6 @@
       "latitude": 51.32,
       "longitude": -116.18,
       "name": "独木舟湖步道"
-    },
-    {
-      "address": "中国，新疆维吾尔自治区",
-      "desc": "天山深处最美也最艰难的徒步穿越路线",
-      "latitude": 43.25,
-      "longitude": 85.0,
-      "name": "狼塔C线"
     },
     {
       "address": "法国/意大利/瑞士，阿尔卑斯山",

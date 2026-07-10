@@ -188,6 +188,50 @@ def _gen_uuid():
     return result.stdout.strip()
 
 
+def sort_dict_keys(data):
+    """递归地对字典的键进行排序"""
+    if isinstance(data, dict):
+        sorted_dict = {}
+        for key in sorted(data.keys()):
+            sorted_dict[key] = sort_dict_keys(data[key])
+        return sorted_dict
+    elif isinstance(data, list):
+        return [sort_dict_keys(item) for item in data]
+    else:
+        return data
+
+
+def sort_items(items):
+    """对items数组进行排序，按name字段"""
+    return sorted(items, key=lambda x: x.get('name', ''))
+
+
+def format_list_data(data):
+    """格式化清单数据"""
+    # 确保必填字段存在
+    required_fields = ['id', 'name', 'desc', 'icon', 'category', 'date', 'items']
+    for field in required_fields:
+        if field not in data:
+            data[field] = '' if field != 'items' else []
+    
+    # 格式化date字段（如果是字符串格式，转换为时间戳）
+    if isinstance(data['date'], str):
+        try:
+            # 尝试解析YYYY-MM-DD格式
+            from datetime import datetime
+            dt = datetime.strptime(data['date'], '%Y-%m-%d')
+            data['date'] = int(dt.timestamp())
+        except ValueError:
+            pass  # 保持原样
+    
+    # 排序items
+    if 'items' in data and isinstance(data['items'], list):
+        data['items'] = sort_items(data['items'])
+    
+    # 递归排序所有字典键
+    return sort_dict_keys(data)
+
+
 def update_list_file(filepath):
     """Update count, ensure id (UUID), convert date, and rename file to match id in a list JSON file."""
     with open(filepath, "r", encoding="utf-8") as f:
@@ -220,8 +264,11 @@ def update_list_file(filepath):
         # Was millisecond timestamp, convert to seconds
         data["date"] = int(date_val // 1000)
     
+    # 格式化数据以确保一致性
+    data = format_list_data(data)
+    
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        json.dump(data, f, ensure_ascii=False, indent=2)
     return filepath
 
 
@@ -277,7 +324,7 @@ def generate_category_index(category_dir):
     }
 
     with open(cat_index_file, "w", encoding="utf-8") as f:
-        json.dump(index_data, f, ensure_ascii=False, indent=4)
+        json.dump(index_data, f, ensure_ascii=False, indent=2)
 
     return file_count
 
@@ -338,7 +385,7 @@ def generate_root_index(version=None):
     if version is not None:
         root_data["version"] = version
     with open(ROOT_INDEX, "w", encoding="utf-8") as f:
-        json.dump(root_data, f, ensure_ascii=False, indent=4)
+        json.dump(root_data, f, ensure_ascii=False, indent=2)
 
     return warnings
 
@@ -382,7 +429,7 @@ def generate_release_assets(version=None):
         "releaseDate": int(time.time()),
     }
     with open(RELEASE_META, "w", encoding="utf-8") as f:
-        json.dump(release_data, f, ensure_ascii=False, indent=4)
+        json.dump(release_data, f, ensure_ascii=False, indent=2)
 
     return new_version
 

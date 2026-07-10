@@ -1,34 +1,34 @@
 {
-    "id": "music",
-    "name": "音乐",
-    "icon": "music.note",
-    "desc": "用音乐感受世界",
-    "count": 3,
-    "updateAt": 1783612800,
-    "items": [
-        {
-            "id": "E80A82A4-AE16-49CD-B7D1-A80E025CBFEE",
-            "name": "世界古典音乐大师",
-            "desc": "永恒的旋律，不朽的传奇，古典音乐的巅峰之作",
-            "icon": "music.note",
-            "date": 1783612800,
-            "count": 46
-        },
-        {
-            "id": "E8A5C129-AC2C-4E23-B18A-49BC06031597",
-            "name": "一生必听的50首歌",
-            "desc": "那些年循环播放的旋律",
-            "icon": "music.note",
-            "date": 1780156800,
-            "count": 50
-        },
-        {
-            "id": "4419421E-53FF-44B5-9464-223D5B7F6D7E",
-            "name": "华语乐坛最经典的50张专辑",
-            "desc": "每张都是一个时代的记忆",
-            "icon": "opticaldisc.fill",
-            "date": 1780156800,
-            "count": 50
-        }
-    ]
+  "id": "music",
+  "name": "音乐",
+  "icon": "music.note",
+  "desc": "用音乐感受世界",
+  "count": 3,
+  "updateAt": 1783612800,
+  "items": [
+    {
+      "id": "E80A82A4-AE16-49CD-B7D1-A80E025CBFEE",
+      "name": "世界古典音乐大师",
+      "desc": "永恒的旋律，不朽的传奇，古典音乐的巅峰之作",
+      "icon": "music.note",
+      "date": 1783612800,
+      "count": 46
+    },
+    {
+      "id": "E8A5C129-AC2C-4E23-B18A-49BC06031597",
+      "name": "一生必听的50首歌",
+      "desc": "那些年循环播放的旋律",
+      "icon": "music.note",
+      "date": 1780156800,
+      "count": 50
+    },
+    {
+      "id": "4419421E-53FF-44B5-9464-223D5B7F6D7E",
+      "name": "华语乐坛最经典的50张专辑",
+      "desc": "每张都是一个时代的记忆",
+      "icon": "opticaldisc.fill",
+      "date": 1780156800,
+      "count": 50
+    }
+  ]
 }

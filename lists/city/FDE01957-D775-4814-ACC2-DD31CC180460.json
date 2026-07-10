@@ -1,18 +1,11 @@
 {
   "category": "city",
-  "count": 50,
+  "count": 46,
   "date": 1780156800,
   "desc": "和爱的人一起去",
   "icon": "heart.fill",
   "id": "FDE01957-D775-4814-ACC2-DD31CC180460",
   "items": [
-    {
-      "address": "中国云南省丽江市",
-      "desc": "雪山下的纳西古城，屋顶上的星空为证",
-      "latitude": 26.8721,
-      "longitude": 100.2299,
-      "name": "丽江"
-    },
     {
       "address": "Udaipur, Rajasthan, India",
       "desc": "印度湖城，水上宫殿与白色之城的异域浪漫",
@@ -112,13 +105,6 @@
       "name": "塞维利亚"
     },
     {
-      "address": "中国云南省大理白族自治州大理市",
-      "desc": "苍山洱海间的风花雪月，自由与爱的乌托邦",
-      "latitude": 25.6065,
-      "longitude": 100.2679,
-      "name": "大理"
-    },
-    {
       "address": "Venice, Italy",
       "desc": "水城贡多拉上的深情一吻，时光在此停驻",
       "latitude": 45.4408,
@@ -194,13 +180,6 @@
       "latitude": 42.6507,
       "longitude": 18.0944,
       "name": "杜布罗夫尼克"
-    },
-    {
-      "address": "中国浙江省杭州市",
-      "desc": "西湖十景间的千年情缘，断桥不断有情人",
-      "latitude": 30.2741,
-      "longitude": 120.1551,
-      "name": "杭州"
     },
     {
       "address": "Charleston, SC, USA",
@@ -285,13 +264,6 @@
       "latitude": 41.9028,
       "longitude": 12.4964,
       "name": "罗马"
-    },
-    {
-      "address": "中国江苏省苏州市",
-      "desc": "东方威尼斯，园林深处的江南情思",
-      "latitude": 31.299,
-      "longitude": 120.5853,
-      "name": "苏州"
     },
     {
       "address": "Fes, Morocco",

@@ -1,34 +1,34 @@
 {
-    "id": "life",
-    "name": "人生",
-    "icon": "heart.fill",
-    "desc": "人生清单，不留遗憾",
-    "count": 3,
-    "updateAt": 1783612800,
-    "items": [
-        {
-            "id": "3F5007C0-1E26-41D7-B22A-873CAC682F5D",
-            "name": "人生必做50件事",
-            "desc": "生命的意义在于体验，让人生不留遗憾的终极清单",
-            "icon": "heart.fill",
-            "date": 1783612800,
-            "count": 49
-        },
-        {
-            "id": "81596A0C-3777-47C2-AC21-A90BB4BB95FC",
-            "name": "一辈子要完成的100件事",
-            "desc": "人生清单，不留遗憾",
-            "icon": "heart.fill",
-            "date": 1780156800,
-            "count": 100
-        },
-        {
-            "id": "CFE75AB1-81C6-4BAB-9047-145410127F21",
-            "name": "退休前必完成的50件事",
-            "desc": "趁还年轻，别留遗憾",
-            "icon": "star.fill",
-            "date": 1780156800,
-            "count": 50
-        }
-    ]
+  "id": "life",
+  "name": "人生",
+  "icon": "heart.fill",
+  "desc": "人生清单，不留遗憾",
+  "count": 3,
+  "updateAt": 1783612800,
+  "items": [
+    {
+      "id": "3F5007C0-1E26-41D7-B22A-873CAC682F5D",
+      "name": "人生必做50件事",
+      "desc": "生命的意义在于体验，让人生不留遗憾的终极清单",
+      "icon": "heart.fill",
+      "date": 1783612800,
+      "count": 49
+    },
+    {
+      "id": "81596A0C-3777-47C2-AC21-A90BB4BB95FC",
+      "name": "一辈子要完成的100件事",
+      "desc": "人生清单，不留遗憾",
+      "icon": "heart.fill",
+      "date": 1780156800,
+      "count": 98
+    },
+    {
+      "id": "CFE75AB1-81C6-4BAB-9047-145410127F21",
+      "name": "退休前必完成的50件事",
+      "desc": "趁还年轻，别留遗憾",
+      "icon": "star.fill",
+      "date": 1780156800,
+      "count": 46
+    }
+  ]
 }

@@ -1,18 +1,18 @@
 {
-    "id": "sport",
-    "name": "运动",
-    "icon": "sportscourt.fill",
-    "desc": "挑战身体的极限",
-    "count": 1,
-    "updateAt": 1780156800,
-    "items": [
-        {
-            "id": "658EAF9F-32E4-43E1-8491-0E72271F65C9",
-            "name": "一生必体验的50项运动",
-            "desc": "挑战自我，超越极限",
-            "icon": "figure.run",
-            "date": 1780156800,
-            "count": 50
-        }
-    ]
+  "id": "sport",
+  "name": "运动",
+  "icon": "sportscourt.fill",
+  "desc": "挑战身体的极限",
+  "count": 1,
+  "updateAt": 1780156800,
+  "items": [
+    {
+      "id": "658EAF9F-32E4-43E1-8491-0E72271F65C9",
+      "name": "一生必体验的50项运动",
+      "desc": "挑战自我，超越极限",
+      "icon": "figure.run",
+      "date": 1780156800,
+      "count": 50
+    }
+  ]
 }

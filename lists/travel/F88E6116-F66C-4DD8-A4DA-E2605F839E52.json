@@ -1,6 +1,6 @@
 {
   "category": "travel",
-  "count": 50,
+  "count": 45,
   "date": 1780156800,
   "desc": "碧海蓝天的人间仙境",
   "icon": "sun.max.fill",
@@ -35,13 +35,6 @@
       "name": "兰卡威"
     },
     {
-      "address": "Iceland",
-      "desc": "冰与火之地，极光、温泉与瀑布的奇幻世界",
-      "latitude": 64.9631,
-      "longitude": -19.0208,
-      "name": "冰岛"
-    },
-    {
       "address": "Galápagos Islands, Ecuador",
       "desc": "达尔文进化论的灵感之地，与史前生物面对面",
       "latitude": -0.9538,
@@ -68,13 +61,6 @@
       "latitude": 17.9,
       "longitude": -62.8333,
       "name": "圣巴托洛缪岛"
-    },
-    {
-      "address": "Santorini, Greece",
-      "desc": "爱琴海火山岛上的蓝白梦境，世界最美日落",
-      "latitude": 36.3932,
-      "longitude": 25.4615,
-      "name": "圣托里尼"
     },
     {
       "address": "Seychelles",
@@ -166,13 +152,6 @@
       "latitude": -17.7134,
       "longitude": 178.065,
       "name": "斐济"
-    },
-    {
-      "address": "Sri Lanka",
-      "desc": "印度洋的宝石之岛，茶园、古寺与野性自然",
-      "latitude": 7.8731,
-      "longitude": 80.7718,
-      "name": "斯里兰卡"
     },
     {
       "address": "Phuket, Thailand",
@@ -322,13 +301,6 @@
       "name": "长滩岛"
     },
     {
-      "address": "Maldives",
-      "desc": "印度洋上的珍珠项链，水上屋与碧蓝浅海的极致奢华",
-      "latitude": 3.2028,
-      "longitude": 73.2207,
-      "name": "马尔代夫"
-    },
-    {
       "address": "Mayotte, France",
       "desc": "印度洋中的法属泻湖，世界最大封闭泻湖",
       "latitude": -12.8275,
@@ -341,13 +313,6 @@
       "latitude": 35.9375,
       "longitude": 14.3754,
       "name": "马耳他"
-    },
-    {
-      "address": "Madagascar",
-      "desc": "印度洋的诺亚方舟，独一无二的动植物王国",
-      "latitude": -18.7669,
-      "longitude": 46.8691,
-      "name": "马达加斯加"
     },
     {
       "address": "Santa Cruz, Galápagos, Ecuador",
