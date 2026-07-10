@@ -80,7 +80,7 @@ StellectList/
   "items": [
     {
       "name": "杭州",
-      "desc": "人间天堂，西湖美景",
+      "desc": "**人间天堂**，*西湖美景* 🌟\n~~过度开发~~\n`丝绸之都` [官网](https://example.com/hangzhou)",
       "latitude": 30.2741,
       "longitude": 120.1551,
       "address": "浙江省杭州市"
@@ -104,10 +104,22 @@ StellectList/
 | 字段 | 是否必填 | 类型 | 说明 |
 |------|---------|------|------|
 | name | 必填 | string | 条目名称 |
-| desc | 可选（建议带上） | string | 条目描述 |
+| desc | 可选（建议带上） | string | 条目描述，支持简单markdown格式 |
 | latitude | 可选 | number | 纬度 |
 | longitude | 可选 | number | 经度 |
 | address | 可选 | string | 地址信息 |
+
+### Markdown支持说明
+desc字段支持以下markdown格式：
+✅ **Bold**: `**粗体文本**`
+✅ *Italic*: `*斜体文本*`
+✅ **Bold Italic**: `***粗斜体文本***`
+✅ ~~Strikethrough~~: `~~删除线文本~~`
+✅ `Inline Code`: `` `行内代码` ``
+✅ [Link](URL): `[链接文本](URL)`
+✅ Emoji: 普通Unicode字符（如 🌟、⭐、🎯）
+
+❌ 不支持：Heading、List、Numbered List、Block Quote、Code Block、Table、Horizontal Rule、Image、HTML
 
 ### 自动生成字段
 部署脚本会自动添加以下字段：
@@ -160,6 +172,7 @@ ls -la release/
 - 有地理位置属性的条目建议补全 latitude、longitude、address
 - 生成清单时 date 填当天日期（YYYY-MM-DD 格式即可，脚本会自动转换）
 - 所有时间戳均为秒级（10位数字）
+- desc字段支持简单markdown格式，增强描述的可读性和表现力
 
 ---
 
