@@ -31,10 +31,9 @@ StellectList 是 Stellect 应用的数据内容生成和管理仓库，专门为
 ```
 StellectList/
 ├── indexes.json              # 根索引（自动生成）
-├── scripts/                 # 脚本目录
-│   ├── deploy.py            # 校验 & 部署脚本
-│   ├── fix_dump.py          # 重复项处理脚本
-│   └── lint.py              # 格式化 & 校验脚本
+├── deploy.py                 # 校验 & 部署脚本
+├── fix_dump.py               # 重复项处理脚本
+├── lint.py                   # 格式化 & 校验脚本
 ├── lists/                    # 正式清单目录
 │   ├── city/                 # 城市清单
 │   ├── book/                 # 阅读清单
@@ -136,7 +135,7 @@ desc字段支持以下markdown格式：
 ### 工作流程
 1. **生成清单** → 放到 `tmps/` 目录下
 2. **如果是新分类** → 在 `lists/` 下新建对应目录，并创建 `_indexes.json` 填写分类信息（name、icon、desc）
-3. **运行部署** → 执行 `python3 scripts/deploy.py`，脚本会自动校验、归档、生成索引
+3. **运行部署** → 执行 `python3 deploy.py`，脚本会自动校验、归档、生成索引
 
 > 根目录下的 `indexes.json` 完全由脚本从 `lists/*/_indexes.json` 自动生成，**不要手动编辑**。
 
@@ -170,7 +169,7 @@ desc字段支持以下markdown格式：
 # 1. 将新的清单文件放入 tmps/ 目录
 # 2. 如有新分类，在 lists/ 下创建目录和 _indexes.json
 # 3. 运行部署脚本
-python3 scripts/deploy.py
+python3 deploy.py
 
 # 4. 获取发布包
 ls -la release/
@@ -179,19 +178,19 @@ ls -la release/
 ### 脚本使用示例
 ```bash
 # 部署脚本 - 校验、归档、生成索引
-python3 scripts/deploy.py
+python3 deploy.py
 
 # 格式化脚本 - 只格式化所有清单文件
-python3 scripts/lint.py --format-only
+python3 lint.py --format-only
 
 # 格式化脚本 - 只校验，不格式化
-python3 scripts/lint.py --check-only
+python3 lint.py --check-only
 
 # 重复项处理脚本 - 处理所有清单文件的重复项
-python3 scripts/fix_dump.py -all
+python3 fix_dump.py -all
 
 # 重复项处理脚本 - 处理单个文件
-python3 scripts/fix_dump.py lists/movie/xxx.json
+python3 fix_dump.py lists/movie/xxx.json
 ```
 
 ### 命名规范
