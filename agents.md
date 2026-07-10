@@ -45,9 +45,10 @@
 ```
 StellectList/
 ├── indexes.json              # 根索引（自动生成，勿手动编辑）
-├── deploy.py                 # 校验 & 部署脚本
-├── fix_dump.py               # 重复项处理脚本
-├── lint.py                   # 格式化 & 校验脚本
+├── scripts/                  # 脚本目录
+│   ├── deploy.py            # 校验 & 部署脚本
+│   ├── fix_dump.py          # 重复项处理脚本
+│   └── lint.py              # 格式化 & 校验脚本
 ├── lists/                    # 正式清单目录
 │   ├── city/
 │   │   ├── _indexes.json     # 分类索引（自动生成，_ 前缀）
@@ -218,7 +219,7 @@ StellectList/
 ### deploy.py - 部署脚本
 ```bash
 # 基本部署 - 校验、归档、生成索引
-python3 deploy.py
+python3 scripts/deploy.py
 
 # 功能说明：
 # - 自动校验 JSON 格式和字段完整性
@@ -232,13 +233,13 @@ python3 deploy.py
 ### lint.py - 格式化 & 校验脚本
 ```bash
 # 默认模式：格式化 + 校验
-python3 lint.py
+python3 scripts/lint.py
 
 # 只格式化，不校验
-python3 lint.py --format-only
+python3 scripts/lint.py --format-only
 
 # 只校验，不格式化
-python3 lint.py --check-only
+python3 scripts/lint.py --check-only
 
 # 功能说明：
 # - 格式化：2空格缩进、字段按字母顺序排序、items数组按name排序
@@ -248,10 +249,10 @@ python3 lint.py --check-only
 ### fix_dump.py - 重复项处理脚本
 ```bash
 # 处理所有清单文件的重复项（优先保留lists目录下的）
-python3 fix_dump.py -all
+python3 scripts/fix_dump.py -all
 
 # 处理单个清单文件的重复项
-python3 fix_dump.py lists/movie/xxx.json
+python3 scripts/fix_dump.py lists/movie/xxx.json
 
 # 功能说明：
 # - 识别并处理跨文件重复项

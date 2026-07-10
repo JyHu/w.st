@@ -14,7 +14,7 @@ import time
 import zipfile
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).parent
+ROOT_DIR = Path(__file__).parent.parent
 LISTS_DIR = ROOT_DIR / "lists"
 TMPS_DIR = ROOT_DIR / "tmps"
 ROOT_INDEX = ROOT_DIR / "indexes.json"
